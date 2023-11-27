@@ -69,8 +69,9 @@ Online
       a.	User: admin
       b.	Pass: Admin@123
    ```
-   2.	Com esse usuário, poderá ser criado o acesso para os outros painéis 
-      a.	`http://89.116.214.168/projects/hospital-deve/authentication/medical`
-      b.	`http://89.116.214.168/projects/hospital-deve/authentication/patient`
-   •	Sempre fazer logout para acessar outro painel, também não esquecer de que não será possivel trocar a senha do admin.
-   •	Foi desabilitado o esquecer senha do medical e patient.
+   2.	Com esse usuário, poderá ser criado o acesso para os outros painéis <br>
+      Sempre fazer logout para acessar outro painel, também não esquecer de que não será possivel trocar a senha do admin. <br>
+      Foi desabilitado o esquecer senha do medical e patient. <br>
+        a.	`http://89.116.214.168/projects/hospital-deve/authentication/medical` <br>
+        b.	`http://89.116.214.168/projects/hospital-deve/authentication/patient`
+   
