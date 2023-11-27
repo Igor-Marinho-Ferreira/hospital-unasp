@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,600&display=swap');
+
+:root {
+    --company-color: #3366FF;
+    --background-color: #FFF;
+    --message-welcome: #b3b3b3;
+    --input-label: #8f8f8f;
+    --input-label-require: #ff0000;
+    --outline-input: 0 0 0 0.2rem rgba(0, 187, 84, 0.342);
+    --link-color: #3b3b3b;
+    --company-color-hover: #254EDB;
+    --text-white: #FFF;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--background-color);
+}
+
+p.welcome-message {
+    color: var(--message-welcome);
+    font-weight: 300;
+}
+
+
+.company-header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.company-header h2 {
+    color: var(--company-color);
+    font-weight: 700;
+    margin: 0;
+    margin-left: 0.6rem;
+}
+
+a {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+    text-decoration: none !important;
+}
+
+
+
+
+.half,
+.half .container>.row {
+    height: 100vh;
+}
+
+
+.half .contents,
+.half .bg {
+    width: 50%;
+}
+
+
+
+.half .contents .form-group,
+.half .bg .form-group {
+    margin-bottom: 0;
+    padding: 15px 0;
+    border-bottom: none;
+}
+
+
+
+
+.half .contents .form-group label,
+.half .bg .form-group label {
+    font-size: 13px;
+    display: block;
+    margin-bottom: 3px;
+    margin-left: 2px;
+    color: var(--input-label);
+    font-weight: bold;
+}
+
+.half .contents .form-group label span {
+    color: var(--input-label-require);
+    font-weight: bold;
+}
+
+.half .contents .form-control,
+.half .bg .form-control {
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+.half .contents .form-control:active,
+.half .contents .form-control:focus,
+.half .bg .form-control:active,
+.half .bg .form-control:focus {
+    border-color: transparent;
+    outline: 0;
+    -webkit-box-shadow: var(--outline-input);
+    box-shadow: var(--outline-input);
+}
+
+.half .bg {
+    background-size: cover;
+    background-position: center;
+}
+
+.half a {
+    color: var(--link-color);
+}
+
+.half .btn {
+    height: 54px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.half .forgot-pass:hover {
+    color: var(--company-color);
+}
+
+.btn-company {
+    background-color: var(--company-color);
+    color: var(--text-white);
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.btn-company:hover {
+    color: var(--text-white);
+    background: var(--company-color-hover);
+}
+
+.btn-disabled {
+    background-color: gray;
+    color: var(--text-white);
+}
+
+.btn-disabled:hover {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+
+
+@media (max-width: 991.98px) {
+    .half .bg {
+        display: none;
+    }
+
+    .half .contents {
+        padding: 0 20px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 991.98px) {
+    #background::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}

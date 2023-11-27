@@ -1,0 +1,520 @@
+/* Google Font Import - Poppins */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;600;700;900&display=swap');
+
+/* Global styles */
+:root {
+    /* Colors */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #3366FF;
+    --primary-color-hover: #254EDB;
+    --primary-color-text: #1939B7;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+    --text-color-icon-selected: #FFF;
+    --text-color-light-for-buttons: #FFF;
+    --card-form: #FFF;
+    --text-color-input: #707070;
+    --text-color-modal: #707070;
+
+    --td-even: #f2f2f2;
+    --td-odd: #ffffff;
+    --td-border: transparent;
+    --placeholder-inputs: #707070;
+    --input-border: #CCC;
+    --breadcrumb-color: #707070;
+    --table-shadow: none;
+    --bg-modal: #FFF;
+
+    /* Transitions */
+    --tran-03: all 0.2s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+/* Dark mode */
+body.dark {
+    --body-color: #151f32;
+    --sidebar-color: #040d12;
+    --card-form: #18273f;
+
+    --td-even: #131a1e;
+    --td-odd: #131a1e;
+    --td-border: transparent;
+
+    --placeholder-inputs: #FFF;
+    --input-border: #3366FF;
+    --breadcrumb-color: #FFF;
+    --table-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --bg-modal: #EEEEEE;
+    --text-color-input: #0c142e;
+    --text-color-modal: #0c142e;
+
+
+    /* --primary-color: #014d99; */
+    --primary-color-light: #3366FF;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+    --text-color-icon-selected: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+ul,
+ol {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Light mode */
+body {
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+/* Reusable styles */
+.sidebar li {
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sidebar header .image,
+.sidebar .icon {
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.sidebar .text,
+.sidebar .icon {
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sidebar .text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+/* Sidebar header */
+.sidebar header {
+    position: relative;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar header .logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+header .image-text .name {
+    margin-top: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+header .image-text .profession {
+    font-size: 0.9rem;
+    margin-top: -2px;
+    display: block;
+}
+
+.sidebar header .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle {
+    color: var(--text-color);
+}
+
+.sidebar.close .toggle {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+/* Sidebar menu */
+.sidebar .menu {
+    margin-top: 40px;
+}
+
+.sidebar li a {
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.sidebar li a:hover {
+    background-color: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color);
+}
+
+/* Sidebar menu bar */
+.sidebar .menu-bar {
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+.menu-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .menu-bar .menu .menu-links .nav-link.selected {
+    background: var(--primary-color);
+    border-radius: 6px;
+}
+
+.sidebar .menu-bar .menu .menu-links .nav-link.selected a i,
+.sidebar .menu-bar .menu .menu-links .nav-link.selected a span {
+    color: var(--text-color-icon-selected);
+}
+
+.sidebar .menu-bar .mode {
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
+
+.menu-bar .mode .sun-moon {
+    height: 50px;
+    width: 60px;
+}
+
+.mode .sun-moon i {
+    position: absolute;
+}
+
+.mode .sun-moon i.sun {
+    opacity: 0;
+}
+
+body.dark .mode .sun-moon i.sun {
+    opacity: 1;
+}
+
+body.dark .mode .sun-moon i.moon {
+    opacity: 0;
+}
+
+body.dark .mode .mode-text,
+body.dark .mode i {
+    color: var(--text-color-icon-selected);
+}
+
+.menu-bar .bottom-content .toggle-switch {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before {
+    left: 20px;
+}
+
+.btn.btn-company {
+    background-color: var(--primary-color);
+    color: var(--text-color-light-for-buttons);
+}
+
+.btn.btn-company:hover {
+    background-color: var(--primary-color-hover);
+}
+
+
+
+/* Home section */
+.home {
+    position: absolute;
+    top: 0;
+    left: 250px;
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    padding-inline: 4rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar.close~.home {
+    left: 88px;
+    min-height: 100vh;
+    width: calc(100% - 88px);
+}
+
+
+/* Estilizando a barra do scroll */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 8px;
+}
+
+/* Estilizando o track (a área ao redor da thumb) */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* Estilizando a thumb (o indicador de posição) */
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+}
+
+/* Estilizando a thumb quando o usuário está interagindo com ela */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    border-radius: 8px;
+}
+
+.active>.page-link,
+.page-link.active {
+    z-index: 3;
+    color: var(--text-color-light-for-buttons);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.badge-cell {
+    cursor: pointer;
+}
+
+
+#cardForm,
+#cardReport {
+    background: var(--card-form);
+}
+
+#cardForm .card-header,
+#cardReport .card-header {
+    background-color: #ECF8F9;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: none;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    background: var(--card-form);
+    color: var(--text-color);
+}
+
+#cardForm .card-header p,
+#cardReport .card-header p {
+    color: var(--text-color) !important;
+}
+
+
+#cardForm .card-body,
+#cardReport .card-body {
+    padding-inline: 2rem;
+}
+
+.form-label,
+.form-control,
+.form-control-sm {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+
+.form-control {
+    transition: var(--tran-05);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color-hover);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--primary-color-hover)
+}
+
+#cardForm .card-body input,
+#cardForm .card-body select,
+#cardReport .card-body input,
+#cardReport .card-body select {
+    background-color: var(--card-form) !important;
+    border: 1px solid var(--input-border) !important;
+    color: var(--text-color);
+    border-radius: 8px;
+}
+
+#cardForm .card-body input::placeholder,
+#cardForm .card-body select::placeholder,
+#cardReport .card-body input::placeholder,
+#cardReport .card-body select::placeholder {
+    color: var(--placeholder-inputs);
+}
+
+.breadcrumb-item,
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--breadcrumb-color) !important;
+}
+
+
+.modal .modal-content {
+    border: none;
+}
+
+.modal .modal-header,
+.modal .modal-body {
+    background-color: var(--bg-modal) !important;
+    color: var(--text-color-modal);
+}
+
+.modal .modal-body {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.modal .modal-body input {
+    color: var(--text-color-input);
+}
+
+.modal .modal-body .form-label {
+    color: var(--text-color-modal);
+}
+
+@media (max-width: 768px) {
+    .home {
+        padding-inline: 20px;
+    }
+
+    .sidebar.close {
+        width: 0px;
+    }
+
+    .sidebar.close .image-text {
+        display: none;
+    }
+
+    .sidebar.close .toggle {
+        margin-top: 20px;
+    }
+
+    .sidebar.close~.home {
+        left: 28px;
+        width: calc(100% - 28px);
+    }
+}

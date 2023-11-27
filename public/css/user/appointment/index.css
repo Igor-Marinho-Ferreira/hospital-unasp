@@ -1,0 +1,39 @@
+
+.shadow-light {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #526D82;
+}
+
+
+
+.text-muted {
+    font-size: 0.8rem;
+}
+
+.btn.btn-sm {
+    height: 31px;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+}
+
+
+#containerFilter {
+    display: flex;
+    margin-top: 7px;
+    margin-bottom: 14px;
+}
+
+#containerFilter input {
+    width: 240px;
+    text-align: center;
+}
+
+#containerFilter button {
+    font-size: 1rem;
+    margin-left: 9px;
+}
